@@ -1,0 +1,32 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+#configuracion de spring
+spring:
+  application:
+    name: herramientas-matutino
+#configuracion de migracion
+  flyway:
+     enabled: true
+     baselineVersion: 1
+     location:
+      classpath: db/migration
+     sqlMigrationSuffixes: .sql
+     baselineOnMigrate: true
+     sqlMigrationPrefix: V
+     schemas: public
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/herramientas-matutino
+    username: postgres
+    password: 123456
+    driverClassName: org.postgresql.Driver
+  #configuracion de JPA
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
