@@ -1,4 +1,7 @@
+
 package suda.com.herramientasmatutino.repository
 
-class ProductRepository {
-}
+import org.springframework.data.jpa.repository.JpaRepository
+import suda.com.herramientasmatutino.model.Product
+
+interface ProductRepository : JpaRepository<Product, Long>
